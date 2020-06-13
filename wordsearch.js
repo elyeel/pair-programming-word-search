@@ -24,6 +24,14 @@ const wordSearch = (letters, word) => {
         if (l.includes(word)) return true
     }
 
+    const horizontalRevJoin = letters.map(ls => ls.reverse().join(''))
+    for (l of horizontalRevJoin) {
+        if (l.includes(word)) return true
+    }
+
+    const rev = letters.map(ls => ls.reverse())
+    
+
     return false
 }
 
@@ -37,6 +45,6 @@ console.log(wordSearch([
     ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
     ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
     ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-  ], 'VUE'))
+  ], 'REYS'))
 
 module.exports = wordSearch
